@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shaik Security Group | Armed Response, CCTV &amp; Alarms in Roodepoort</title>
+<meta name="description" content="Shaik Security Group: alarms, CCTV, electric fencing, guarding and 24/7 armed response in Florida Lake, Roodepoort and the West Rand.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D91E18; --red-text:#FF5147; --red-dark:#B3170F;
+  --ink:#0B0B0B; --ink-2:#141414; --ink-3:#1C1C1C; --line:#2A2A2A;
+  --paper:#F4F4F2; --white:#FFFFFF; --muted:#A8A8A8; --soft:#CFCFCF;
+  --wa:#1DA851; --star:#FFC83D;
+  --display:"Oswald",Impact,sans-serif; --body:"Inter",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:#F2F2F2;font-family:var(--body);font-size:16px;line-height:1.55}
+img{max-width:100%;display:block}
+a{color:var(--red-text)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{margin:0}
+h1,h2{font-family:var(--display);text-transform:uppercase;line-height:1.05;font-weight:600}
+h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}
+.eyebrow{margin:0 0 8px;color:var(--red-text);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:12px 22px;border-radius:6px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:16px}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#C01913}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-wa{background:var(--wa);color:#fff}
+section{padding:56px 0}
+
+/* top bar + header */
+.topbar{background:#000;font-size:13.5px;color:var(--soft);border-bottom:1px solid #1F1F1F}
+.topbar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 20px;padding-top:7px;padding-bottom:7px}
+.topbar a{color:#fff;text-decoration:none;font-weight:600;margin-left:16px}
+header{background:#fff;position:sticky;top:0;z-index:20;box-shadow:0 1px 0 #E5E5E5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:6px;padding-bottom:6px}
+.logo img{height:64px;width:auto}
+nav{display:flex;align-items:center;gap:6px}
+nav a{color:#111;text-decoration:none;font-weight:600;font-size:15px;padding:10px 14px;border-radius:6px}
+nav a[aria-current="page"]{color:var(--red-dark);box-shadow:inset 0 -3px 0 var(--red)}
+nav .btn{margin-left:8px;color:#fff;box-shadow:none}
+.menu-btn{display:none;background:none;border:1px solid #DDD;border-radius:6px;width:48px;height:48px;cursor:pointer}
+
+/* pages */
+.page{display:none}.page.active{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* home */
+.hero{padding:56px 0;border-bottom:4px solid var(--red)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem);font-weight:700}
+.hero p.lead{color:var(--soft);font-size:18px;margin:18px 0 24px;max-width:540px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.rating{display:flex;align-items:center;gap:10px;color:var(--soft);font-size:14.5px;margin-top:20px}
+.stars{color:var(--star);letter-spacing:2px}
+.hero-img{position:relative}
+.hero-img img{width:100%;height:400px;object-fit:cover;object-position:center 18%;border-radius:10px}
+.badge{position:absolute;left:14px;bottom:14px;background:#000;padding:10px 14px;border-radius:8px}
+.badge b{display:block;font-family:var(--display);font-size:20px;font-weight:600}
+.badge span{font-size:13px;color:var(--soft)}
+.trust{background:var(--ink-2);padding:22px 0}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.trust div{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.review{margin:0;background:var(--ink-3);border:1px solid var(--line);border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.review blockquote{margin:0;color:#E6E6E6}
+.review figcaption{color:var(--muted);font-size:13.5px}
+.row-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px}
+.cta-band{background:var(--red);padding:36px 0}
+.cta-band .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+.cta-band h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.cta-band p{margin:6px 0 0;color:#FFE9E7}
+
+/* services */
+.light{background:var(--paper);color:#111}
+.light .eyebrow{color:var(--red-dark)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.card{background:#fff;border:1px solid #E2E2DE;border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card h3{font-size:19px}
+.card p{margin:0;color:#444;flex-grow:1;font-size:15px}
+.card a{color:var(--red-dark);font-weight:700;text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+.steps span{font-family:var(--display);font-size:44px;font-weight:700;color:var(--red-text);line-height:1}
+.steps h3{font-size:19px;margin:6px 0 4px}
+.steps p{margin:0;color:var(--soft)}
+
+/* about */
+.about{display:grid;grid-template-columns:380px 1fr;gap:40px;align-items:center}
+.about img{width:100%;height:440px;object-fit:cover;object-position:center 15%;border-radius:10px}
+.about p{color:#DADADA;font-size:16.5px}
+.people{display:flex;gap:28px;margin-top:8px}
+.people b{display:block}.people span{color:var(--muted);font-size:14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+.gallery figcaption{color:var(--muted);font-size:13px;margin-top:6px}
+
+/* contact */
+.contact{display:grid;grid-template-columns:1fr 1.5fr;gap:40px}
+.contact-info p{color:#444}
+.contact-info a.big{display:block;font-size:22px;font-weight:700;color:#111;text-decoration:none;margin:14px 0 4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chips span{border:1px solid #CFCFC9;border-radius:999px;padding:6px 12px;font-size:14px;background:#fff}
+.form{background:#fff;border:1px solid #E2E2DE;border-radius:12px;padding:26px}
+.form fieldset{border:0;margin:0 0 18px;padding:0}
+.form legend{font-weight:700;margin-bottom:10px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{background:#fff;color:#111;border:1px solid #BDBDB8;border-radius:999px;padding:9px 16px;min-height:44px;font:inherit;font-size:14.5px;cursor:pointer}
+.pill[aria-pressed="true"]{background:#111;color:#fff;border-color:#111;font-weight:600}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.fields label{display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px}
+.fields input,.fields select{font:inherit;font-weight:400;border:1px solid #BDBDB8;border-radius:6px;padding:11px;min-height:48px;background:#fff}
+.form .btn{width:100%;justify-content:center}
+.form small{display:block;margin-top:12px;color:#5C5C5C;font-size:14px}
+.form small a{color:var(--red-dark);font-weight:600}
+.done{display:none;flex-direction:column;gap:12px;align-items:flex-start}
+.done.show{display:flex}
+.done p{margin:0;color:#444}
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:600;font-size:17px;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red-text);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq details p{margin:0 0 18px;color:var(--soft)}
+
+footer{background:#000;border-top:4px solid var(--red);padding:36px 0 24px;font-size:14.5px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
+footer a{color:#fff;text-decoration:none;display:block}
+footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase;color:#fff}
+.copy{text-align:center;color:#7A7A7A;font-size:13px;margin:24px 0 0}
+
+.wa-float{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;background:var(--wa);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.45);z-index:30}
+.mobile-bar{display:none}
+
+@media (max-width:900px){
+  .hero .wrap,.about,.contact{grid-template-columns:1fr}
+  .hero-img img{height:300px}
+  .about img{height:340px}
+  .trust .wrap,.gallery{grid-template-columns:repeat(2,1fr)}
+  .reviews,.cards,.steps{grid-template-columns:1fr}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center}
+  nav{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:10px 20px 18px;box-shadow:0 10px 20px rgba(0,0,0,.15)}
+  nav.open{display:flex}
+  nav .btn{margin:6px 0 0;justify-content:center}
+  .topbar .info{display:none}
+  .wa-float{display:none}
+  .mobile-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:30}
+  .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;color:#fff;font-weight:700;text-decoration:none}
+  body{padding-bottom:56px}
+  .fields{grid-template-columns:1fr}
+  section{padding:44px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap">
+  <span class="info">PSIRA Reg. No. [YOUR PSIRA NUMBER] · 24/7 emergency response</span>
+  <span><a href="tel:+27732355322">073 235 5322</a><a href="tel:+27102107210">010 210 7210</a></span>
+</div></div>
+
+<header><div class="wrap" style="position:relative">
+  <a href="#home" class="logo" data-link><img src="images/logo.jpg" alt="Shaik Security Group"></a>
+  <button class="menu-btn" aria-label="Open menu" aria-expanded="false">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <nav id="nav">
+    <a href="#home" data-link>Home</a>
+    <a href="#services" data-link>Services</a>
+    <a href="#about" data-link>About</a>
+    <a href="#contact" data-link>Contact</a>
+    <a href="#contact" data-link class="btn btn-red">Free quote</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- HOME -->
+<div class="page" id="page-home">
+  <div class="hero"><div class="wrap">
+    <div>
+      <p class="eyebrow">Roodepoort · Florida · West Rand</p>
+      <h1>Security you can count on, day and night.</h1>
+      <p class="lead">Alarms, CCTV, electric fencing and trained guards for homes, businesses and estates. One team that installs, monitors and responds.</p>
+      <div class="hero-actions">
+        <a href="#contact" data-link class="btn btn-red">Get a free quote</a>
+        <a href="#" class="btn btn-light js-wa" data-msg="Hi Shaik Security, I found you on your website and would like some help.">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1DA851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3L3 21z"/></svg>WhatsApp us</a>
+      </div>
+      <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><span>[4.9] on Google from [XX] reviews</span></div>
+    </div>
+    <div class="hero-img">
+      <img src="images/thair.jpg" alt="Shaik Security officer beside a response vehicle">
+      <div class="badge"><b>24/7 response</b><span>Armed officers on the road</span></div>
+    </div>
+  </div></div>
+
+  <div class="trust"><div class="wrap">
+    <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5147" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>PSIRA registered</div>
+    <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5147" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>Vetted, trained officers</div>
+    <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5147" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>On call 24/7</div>
+    <div><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF5147" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Based in Florida Lake</div>
+  </div></div>
+
+  <section><div class="wrap">
+    <div class="row-head">
+      <div><p class="eyebrow">What clients say</p><h2>Trusted by the pack</h2></div>
+      <a href="[GOOGLE REVIEWS LINK]" style="color:#fff;font-weight:600">All reviews on Google →</a>
+    </div>
+    <div class="reviews">
+      <figure class="review"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>[Client review: what was installed and how fast they responded.]</blockquote><figcaption>[Client name] · [Suburb]</figcaption></figure>
+      <figure class="review"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>[Client review: guarding at a business or complex.]</blockquote><figcaption>[Client name] · [Business]</figcaption></figure>
+      <figure class="review"><span class="stars" aria-label="5 stars">★★★★★</span><blockquote>[Client review: CCTV or electric fence install.]</blockquote><figcaption>[Client name] · [Suburb]</figcaption></figure>
+    </div>
+  </div></section>
+
+  <div class="cta-band"><div class="wrap">
+    <div><h2>Free site check and quote</h2><p>Tell us what you need. We reply the same day.</p></div>
+    <a href="#contact" data-link class="btn btn-light">Get my quote</a>
+  </div></div>
+</div>
+
+<!-- SERVICES -->
+<div class="page" id="page-services">
+  <section class="light"><div class="wrap">
+    <p class="eyebrow">Services</p>
+    <h2>Everything to keep you protected</h2>
+    <div class="cards">
+      <div class="card"><h3>Alarm systems</h3><p>New installs, repairs and upgrades, linked to our response team.</p><a href="#contact" data-link data-service="Alarm systems">Quote this →</a></div>
+      <div class="card"><h3>CCTV and live monitoring</h3><p>Cameras installed and watched off-site, with alerts when it matters.</p><a href="#contact" data-link data-service="CCTV and monitoring">Quote this →</a></div>
+      <div class="card"><h3>Electric fencing</h3><p>Compliant fences installed, repaired and certified.</p><a href="#contact" data-link data-service="Electric fencing">Quote this →</a></div>
+      <div class="card"><h3>Guarding</h3><p>24-hour guards for complexes, malls, office parks and schools. Panic system included.</p><a href="#contact" data-link data-service="Guarding">Quote this →</a></div>
+      <div class="card"><h3>Street and event patrols</h3><p>Neighbours share street patrols, day or night. Evening cover for events too.</p><a href="#contact" data-link data-service="Patrols">Quote this →</a></div>
+      <div class="card"><h3>VIP and safe home escort</h3><p>Close protection and escorts to your door, on request.</p><a href="#contact" data-link data-service="VIP or escort">Quote this →</a></div>
+    </div>
+  </div></section>
+  <section><div class="wrap">
+    <h2>Protected in three steps</h2>
+    <div class="steps">
+      <div><span>01</span><h3>Message us</h3><p>WhatsApp, call or use the form. It takes 30 seconds.</p></div>
+      <div><span>02</span><h3>Free site check</h3><p>We visit, find the weak spots and give you a clear quote.</p></div>
+      <div><span>03</span><h3>You're protected</h3><p>We install, monitor and respond. You join the pack.</p></div>
+    </div>
+  </div></section>
+</div>
+
+<!-- ABOUT -->
+<div class="page" id="page-about">
+  <section><div class="wrap">
+    <div class="about">
+      <img src="images/thair.jpg" alt="Thair Shaik, founder of Shaik Security Group">
+      <div>
+        <p class="eyebrow">The pack</p>
+        <h2>Protection is our profession</h2>
+        <p>Shaik Security Group was founded by Thair Shaik, who leads operations, guarding and special ops. Running a security company with a difference was his lifelong goal.</p>
+        <p>Like a wolf pack, we stay loyal and protect our own. When you become a client, you join the pack, and we guard your home or business like family.</p>
+        <div class="people">
+          <div><b>Thair Shaik</b><span>Founder, Head of Security</span></div>
+          <div><b>Shoneez</b><span>Director</span></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  <section style="background:var(--ink-2)"><div class="wrap">
+    <p class="eyebrow">Our work</p>
+    <h2>On the ground, every day</h2>
+    <div class="gallery">
+      <figure><img src="images/install.jpg" alt="Technician installing equipment" loading="lazy"><figcaption>CCTV install, [suburb]</figcaption></figure>
+      <figure><img src="images/team1.jpg" alt="Shaik team with a client" loading="lazy"><figcaption>Site handover, [suburb]</figcaption></figure>
+      <figure><img src="images/team2.jpg" alt="Shaik installation team" loading="lazy"><figcaption>The installation team</figcaption></figure>
+      <figure><img src="images/vehicles.jpg" alt="Branded response vehicles" loading="lazy"><figcaption>Response vehicles on patrol</figcaption></figure>
+    </div>
+  </div></section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section class="light"><div class="wrap contact">
+    <div class="contact-info">
+      <p class="eyebrow">Free quote</p>
+      <h2>Get your quote in 30 seconds</h2>
+      <p>Tell us what you need. We'll come back to you the same day.</p>
+      <a class="big" href="tel:+27732355322">073 235 5322</a>
+      <a href="mailto:info@shaikgroupsa.co.za" style="color:var(--red-dark)">info@shaikgroupsa.co.za</a>
+      <p style="margin-top:6px">17 Lepelaar Street, Florida Lake, Roodepoort, 1709</p>
+      <p style="font-weight:700;color:#111;margin:18px 0 0">Areas we cover</p>
+      <div class="chips"><span>Florida Lake</span><span>Florida</span><span>Roodepoort</span><span>Hamberg</span><span>Discovery</span><span>Constantia Kloof</span><span>Weltevredenpark</span><span>[More]</span></div>
+    </div>
+
+    <div class="form">
+      <form id="quote-form">
+        <fieldset><legend>1. Home or business?</legend>
+          <div class="pills" data-group="place">
+            <button type="button" class="pill" aria-pressed="true">Home</button>
+            <button type="button" class="pill" aria-pressed="false">Business</button>
+            <button type="button" class="pill" aria-pressed="false">Estate or complex</button>
+          </div>
+        </fieldset>
+        <fieldset><legend>2. What do you need?</legend>
+          <div class="pills" data-group="service">
+            <button type="button" class="pill" aria-pressed="true">Alarm systems</button>
+            <button type="button" class="pill" aria-pressed="false">CCTV and monitoring</button>
+            <button type="button" class="pill" aria-pressed="false">Electric fencing</button>
+            <button type="button" class="pill" aria-pressed="false">Guarding</button>
+            <button type="button" class="pill" aria-pressed="false">Patrols</button>
+            <button type="button" class="pill" aria-pressed="false">VIP or escort</button>
+          </div>
+        </fieldset>
+        <div class="fields">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Phone or WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>Suburb<input name="suburb"></label>
+          <label>Best time to call<select name="time"><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Any time</option></select></label>
+        </div>
+        <button class="btn btn-red" type="submit">Send my request on WhatsApp</button>
+        <small>Prefer email? <a href="mailto:info@shaikgroupsa.co.za">info@shaikgroupsa.co.za</a></small>
+      </form>
+      <div class="done" id="done">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1D8A47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3 style="font-size:24px">Thanks, your request is ready.</h3>
+        <p>WhatsApp should have opened with your details. If it didn't, tap below.</p>
+        <a class="btn btn-wa" id="done-wa" href="#">Open WhatsApp</a>
+        <button type="button" class="pill" id="again">Send another request</button>
+      </div>
+    </div>
+  </div></section>
+
+  <section><div class="wrap faq">
+    <h2 style="margin-bottom:12px">Common questions</h2>
+    <details open><summary>How fast do you respond to an alarm?</summary><p>[Average response time, e.g. under 10 minutes in Florida and Roodepoort.]</p></details>
+    <details><summary>Are your guards registered and trained?</summary><p>Yes. Every officer is PSIRA registered, vetted and continually trained.</p></details>
+    <details><summary>Can you take over my existing alarm?</summary><p>In most cases, yes. We check it on the free site visit and link it to our response.</p></details>
+    <details><summary>Do you do patrols for a whole street?</summary><p>Yes. Neighbours can share the cost of day or night patrols for their street.</p></details>
+    <details><summary>How much does it cost?</summary><p>It depends on your property and what you need. The site visit and quote are free.</p></details>
+  </div></section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><div class="brand">Shaik Security Group</div><div>Protection is our profession</div><div style="font-size:13px;margin-top:6px">PSIRA Reg. No. [YOUR PSIRA NUMBER]</div></div>
+    <div><a href="tel:+27732355322">073 235 5322</a><a href="tel:+27102107210">010 210 7210</a><a href="mailto:info@shaikgroupsa.co.za">info@shaikgroupsa.co.za</a></div>
+    <div><b style="color:#fff">Hours</b><div>Office: [Mon–Fri, 08:00–17:00]</div><div>Response: 24/7</div></div>
+  </div>
+  <p class="copy">© 2026 Shaik Security Group</p>
+</footer>
+
+<a href="#" class="wa-float js-wa" aria-label="Chat on WhatsApp" data-msg="Hi Shaik Security, I found you on your website and would like some help.">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3L3 21z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8c-1-.4-1.9-1.3-2.3-2.3l.8-1-1-2L9 9.5z"/></svg>
+</a>
+<div class="mobile-bar">
+  <a href="tel:+27732355322" style="background:#111">Call now</a>
+  <a href="#" class="js-wa" style="background:var(--wa)" data-msg="Hi Shaik Security, I found you on your website and would like some help.">WhatsApp</a>
+</div>
+
+<script>
+// Number that receives WhatsApp leads (international format, no + or spaces)
+const WA_NUMBER = "27732355322";
+const waLink = t => "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(t);
+
+document.querySelectorAll(".js-wa").forEach(a => { a.href = waLink(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
+
+// Pages
+const pages = ["home","services","about","contact"];
+const nav = document.getElementById("nav");
+const menuBtn = document.querySelector(".menu-btn");
+function show(){
+  const id = location.hash.replace("#","") || "home";
+  const page = pages.includes(id) ? id : "home";
+  pages.forEach(p => document.getElementById("page-"+p).classList.toggle("active", p === page));
+  nav.querySelectorAll("a:not(.btn)").forEach(a => { if (a.getAttribute("href") === "#"+page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
+  window.scrollTo({top:0});
+}
+window.addEventListener("hashchange", show); show();
+menuBtn.addEventListener("click", () => { const o = nav.classList.toggle("open"); menuBtn.setAttribute("aria-expanded", o); });
+
+// Pills
+function pick(group, label){
+  document.querySelectorAll('[data-group="'+group+'"] .pill').forEach(b => b.setAttribute("aria-pressed", b.textContent === label));
+}
+document.querySelectorAll(".pills").forEach(g => g.addEventListener("click", e => {
+  if (e.target.classList.contains("pill")) pick(g.dataset.group, e.target.textContent);
+}));
+document.querySelectorAll("[data-service]").forEach(a => a.addEventListener("click", () => pick("service", a.dataset.service)));
+const chosen = g => document.querySelector('[data-group="'+g+'"] [aria-pressed="true"]').textContent;
+
+// Quote form -> WhatsApp
+const form = document.getElementById("quote-form"), done = document.getElementById("done");
+form.addEventListener("submit", e => {
+  e.preventDefault();
+  const d = new FormData(form);
+  const msg = "Hi Shaik Security, I'd like a quote.\n" +
+    "Service: " + chosen("service") + "\nFor: " + chosen("place") +
+    "\nName: " + d.get("name") + "\nPhone: " + d.get("phone") +
+    (d.get("suburb") ? "\nSuburb: " + d.get("suburb") : "") +
+    "\nBest time to call: " + d.get("time");
+  const link = waLink(msg);
+  document.getElementById("done-wa").href = link;
+  window.open(link, "_blank", "noopener");
+  form.style.display = "none"; done.classList.add("show");
+});
+document.getElementById("again").addEventListener("click", () => { form.reset(); form.style.display = ""; done.classList.remove("show"); });
+</script>
+</body>
+</html>
