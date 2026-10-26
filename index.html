@@ -161,6 +161,19 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
   .fields{grid-template-columns:1fr}
   section{padding:44px 0}
 }
+
+.tour-btn{background:none;border:0;color:inherit;font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;min-height:44px;padding:0 4px}
+.tour-card{position:fixed;left:50%;transform:translateX(-50%);bottom:72px;width:min(440px,calc(100% - 24px));background:#111;color:#fff;border:1px solid #333;border-radius:14px;padding:18px 18px 14px;z-index:60;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.tour-card[hidden]{display:none}
+.tour-card h3{margin:0 0 6px;font-size:19px;color:#fff}
+.tour-card p{margin:0 0 14px;color:#ddd;font-size:15px;line-height:1.5}
+.tour-row{display:flex;align-items:center;gap:8px}
+.tour-row .dots{flex:1;font-size:13px;color:#aaa}
+.tour-card button{min-height:44px;padding:0 16px;border-radius:8px;border:1px solid #444;background:#222;color:#fff;font:inherit;font-weight:600;cursor:pointer}
+.tour-card button.go{background:var(--red-dark,#B3140B);border-color:transparent}
+.tour-x{position:absolute;top:6px;right:6px;border:0!important;background:none!important;min-height:44px;min-width:44px;font-size:22px;padding:0!important}
+.tour-hl{outline:3px solid #FF5147;outline-offset:6px;border-radius:10px;transition:outline-color .2s}
+@media(min-width:721px){.tour-card{bottom:24px}}
 </style>
 </head>
 <body>
@@ -197,6 +210,7 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
         <a href="#" class="btn btn-light js-wa" data-msg="Hi Shaik Security, I found you on your website and would like some help.">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1DA851" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3L3 21z"/></svg>WhatsApp us</a>
       </div>
+      <button class="tour-btn js-tour" type="button">▶ Take a 1-minute tour of this site</button>
       <div class="rating"><span class="stars" aria-hidden="true">★★★★★</span><a href="https://www.google.com/maps/place/?q=place_id:ChIJD1nb-0SglR4RCo-v8_yRZcw" target="_blank" rel="noopener" style="color:inherit">4.7 on Google from 19 reviews</a></div>
     </div>
     <div class="hero-img">
@@ -382,13 +396,18 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
 </div>
 </main>
 
+<div class="tour-card" id="tour" role="dialog" aria-label="Site tour" hidden>
+  <button class="tour-x" type="button" aria-label="Close tour">×</button>
+  <h3 id="tour-t"></h3><p id="tour-p"></p>
+  <div class="tour-row"><span class="dots" id="tour-n"></span><button type="button" id="tour-back">Back</button><button type="button" class="go" id="tour-next">Next</button></div>
+</div>
 <footer>
   <div class="wrap">
     <div><div class="brand">Shaik Security Group</div><div>Protection is our profession</div><div style="font-size:13px;margin-top:6px">PSIRA Reg. No. [YOUR PSIRA NUMBER]</div></div>
     <div><a href="tel:+27732355322">073 235 5322</a><a href="tel:+27102107210">010 210 7210</a><a href="mailto:info@shaikgroupsa.co.za">info@shaikgroupsa.co.za</a></div>
     <div><b style="color:#fff">Hours</b><div>Open 24 hours, 7 days a week</div></div>
   </div>
-  <p class="copy">© 2026 Shaik Security Group · <span style="opacity:.6">v4</span></p>
+  <p class="copy"><button class="tour-btn js-tour" type="button" style="color:#ccc;min-height:44px">Take the site tour</button> · © 2026 Shaik Security Group · <span style="opacity:.6">v5</span></p>
 </footer>
 
 <a href="#" class="wa-float js-wa" aria-label="Chat on WhatsApp" data-msg="Hi Shaik Security, I found you on your website and would like some help.">
@@ -544,6 +563,41 @@ form.addEventListener("submit", e => {
   form.style.display = "none"; done.classList.add("show");
 });
 document.getElementById("again").addEventListener("click", () => { form.reset(); form.style.display = ""; done.classList.remove("show"); });
+
+// Guided tour
+(function(){
+  const steps = [
+    {h:"#home", sel:".hero .wrap", t:"1. The front door", p:"This is what people see first: who you are, your 4.7 Google rating, and two big buttons to get a quote or WhatsApp you. It works the same on a phone."},
+    {h:"#home", sel:".trust", t:"2. Quick proof", p:"Four short reasons to trust you, right under the top. Registered, trained, on call 24/7 and local to Florida Lake."},
+    {h:"#home", sel:".reviews", t:"3. Real Google reviews", p:"Your actual reviews, with a link to read all 19 on Google. New clients trust what other clients say."},
+    {h:"#services", sel:".cards", t:"4. Every service, with a photo", p:"Alarms, CCTV, electric fencing, guarding, patrols and VIP escorts. Each one has its own card and a Get a quote button."},
+    {h:"#quote-alarm", sel:"#q-questions", t:"5. A quote form for each service", p:"Each service asks its own questions, such as home or business, or how many cameras. The person taps their answers, so you get a proper brief instead of 'please call me'."},
+    {h:"#quote-alarm", sel:"#svc-form .fields", t:"6. Straight to your WhatsApp", p:"When they send it, their answers open as a ready-written WhatsApp message to you. No inbox to check, and you reply the same day."},
+    {h:"#about", sel:"#page-about .wrap", t:"7. About Thair and the team", p:"The story of Shaik Security, your founder and your people. It shows there are real people behind the uniform."},
+    {h:"#contact", sel:"#page-contact .contact", t:"8. Contact", p:"Both phone numbers, your email, your hours and a simple form for anyone who prefers to write."},
+    {h:"#home", sel:null, t:"You've seen the whole site", p:"Home, services, a quote form for each service, about and contact, all in one place. The photos and a few details are placeholders that we'll swap for your own."}
+  ];
+  const card=document.getElementById("tour"), T=document.getElementById("tour-t"), P=document.getElementById("tour-p"), N=document.getElementById("tour-n"), nx=document.getElementById("tour-next"), bk=document.getElementById("tour-back");
+  let i=0, hl=null;
+  function clear(){ if(hl){hl.classList.remove("tour-hl");hl=null;} }
+  function go(n){
+    i=Math.max(0,Math.min(steps.length-1,n)); const s=steps[i];
+    clear();
+    if(location.hash!==s.h) location.hash=s.h; else window.scrollTo({top:0});
+    T.textContent=s.t; P.textContent=s.p;
+    N.textContent=(i+1)+" of "+steps.length;
+    bk.style.visibility=i?"visible":"hidden";
+    nx.textContent=i===steps.length-1?"Finish":"Next";
+    card.hidden=false;
+    setTimeout(()=>{ if(s.sel){ const el=document.querySelector(s.sel); if(el){ hl=el; el.classList.add("tour-hl"); window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-90,behavior:"smooth"}); } } },200);
+  }
+  function end(){ clear(); card.hidden=true; }
+  document.querySelectorAll(".js-tour").forEach(b=>b.addEventListener("click",()=>go(0)));
+  nx.addEventListener("click",()=>{ i===steps.length-1?end():go(i+1); });
+  bk.addEventListener("click",()=>go(i-1));
+  card.querySelector(".tour-x").addEventListener("click",end);
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape") end(); });
+})();
 </script>
 </body>
 </html>
