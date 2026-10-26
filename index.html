@@ -117,6 +117,8 @@ nav .btn{margin-left:8px;color:#fff;box-shadow:none}
 .form .btn{width:100%;justify-content:center}
 .form small{display:block;margin-top:12px;color:#5C5C5C;font-size:14px}
 .form small a{color:var(--red-dark);font-weight:600}
+.q-field{display:flex;flex-direction:column;gap:6px;font-weight:700;margin-bottom:18px}
+.q-field input{font:inherit;font-weight:400;border:1px solid #BDBDB8;border-radius:6px;padding:11px;min-height:48px}
 .done{display:none;flex-direction:column;gap:12px;align-items:flex-start}
 .done.show{display:flex}
 .done p{margin:0;color:#444}
@@ -230,12 +232,12 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
     <p class="eyebrow">Services</p>
     <h2>Everything to keep you protected</h2>
     <div class="cards">
-      <div class="card"><h3>Alarm systems</h3><p>New installs, repairs and upgrades, linked to our response team.</p><a href="#contact" data-link data-service="Alarm systems">Quote this →</a></div>
-      <div class="card"><h3>CCTV and live monitoring</h3><p>Cameras installed and watched off-site, with alerts when it matters.</p><a href="#contact" data-link data-service="CCTV and monitoring">Quote this →</a></div>
-      <div class="card"><h3>Electric fencing</h3><p>Compliant fences installed, repaired and certified.</p><a href="#contact" data-link data-service="Electric fencing">Quote this →</a></div>
-      <div class="card"><h3>Guarding</h3><p>24-hour guards for complexes, malls, office parks and schools. Panic system included.</p><a href="#contact" data-link data-service="Guarding">Quote this →</a></div>
-      <div class="card"><h3>Street and event patrols</h3><p>Neighbours share street patrols, day or night. Evening cover for events too.</p><a href="#contact" data-link data-service="Patrols">Quote this →</a></div>
-      <div class="card"><h3>VIP and safe home escort</h3><p>Close protection and escorts to your door, on request.</p><a href="#contact" data-link data-service="VIP or escort">Quote this →</a></div>
+      <div class="card"><h3>Alarm systems</h3><p>New installs, repairs and upgrades, linked to our response team.</p><a href="#quote-alarm">Get a quote →</a></div>
+      <div class="card"><h3>CCTV and live monitoring</h3><p>Cameras installed and watched off-site, with alerts when it matters.</p><a href="#quote-cctv">Get a quote →</a></div>
+      <div class="card"><h3>Electric fencing</h3><p>Compliant fences installed, repaired and certified.</p><a href="#quote-fence">Get a quote →</a></div>
+      <div class="card"><h3>Guarding</h3><p>24-hour guards for complexes, malls, office parks and schools. Panic system included.</p><a href="#quote-guarding">Get a quote →</a></div>
+      <div class="card"><h3>Street and event patrols</h3><p>Neighbours share street patrols, day or night. Evening cover for events too.</p><a href="#quote-patrols">Get a quote →</a></div>
+      <div class="card"><h3>VIP and safe home escort</h3><p>Close protection and escorts to your door, on request.</p><a href="#quote-vip">Get a quote →</a></div>
     </div>
   </div></section>
   <section><div class="wrap">
@@ -273,6 +275,41 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
       <figure><img src="images/team1.jpg" alt="Shaik team with a client" loading="lazy"><figcaption>Site handover, [suburb]</figcaption></figure>
       <figure><img src="images/team2.jpg" alt="Shaik installation team" loading="lazy"><figcaption>The installation team</figcaption></figure>
       <figure><img src="images/vehicles.jpg" alt="Branded response vehicles" loading="lazy"><figcaption>Response vehicles on patrol</figcaption></figure>
+    </div>
+  </div></section>
+</div>
+
+<!-- SERVICE QUOTE -->
+<div class="page" id="page-quote">
+  <section class="light"><div class="wrap contact">
+    <div class="contact-info">
+      <a href="#services" style="color:var(--red-dark);font-weight:600;text-decoration:none;display:inline-flex;min-height:44px;align-items:center">← All services</a>
+      <p class="eyebrow" style="margin-top:8px">Free quote</p>
+      <h2 id="q-title">Quote</h2>
+      <p id="q-intro"></p>
+      <p style="margin-top:18px">Rather talk? <a class="big" href="tel:+27732355322" style="display:inline;font-size:18px">073 235 5322</a></p>
+    </div>
+    <div class="form">
+      <form id="svc-form">
+        <div id="q-questions"></div>
+        <div class="fields">
+          <label>Your name<input name="name" required autocomplete="name"></label>
+          <label>Phone or WhatsApp<input name="phone" type="tel" required autocomplete="tel"></label>
+          <label>Suburb<input name="suburb" required></label>
+          <label>Best time to call<select name="time"><option>Morning</option><option>Afternoon</option><option>Evening</option><option>Any time</option></select></label>
+        </div>
+        <label style="display:flex;flex-direction:column;gap:6px;font-weight:600;font-size:14.5px;margin-bottom:18px">Anything else we should know? (optional)
+          <textarea name="notes" rows="3" style="font:inherit;font-weight:400;border:1px solid #BDBDB8;border-radius:6px;padding:11px"></textarea>
+        </label>
+        <button class="btn btn-red" type="submit">Send my quote request on WhatsApp</button>
+      </form>
+      <div class="done" id="svc-done">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1D8A47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3 style="font-size:24px">Thanks, your request is ready.</h3>
+        <p>WhatsApp should have opened with your answers. If it didn't, tap below.</p>
+        <a class="btn btn-wa" id="svc-done-wa" href="#">Open WhatsApp</a>
+        <a class="pill" href="#services" style="display:inline-flex;align-items:center;text-decoration:none">Quote another service</a>
+      </div>
     </div>
   </div></section>
 </div>
@@ -364,15 +401,112 @@ const waLink = t => "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent
 
 document.querySelectorAll(".js-wa").forEach(a => { a.href = waLink(a.dataset.msg); a.target = "_blank"; a.rel = "noopener"; });
 
+
+// Per-service quote questions. type: "choice" (tap one), "multi" (tap any), "number", "text", "date"
+const QUOTES = {
+  alarm: { title: "Alarm systems", intro: "A few quick questions so we can price your alarm properly.", q: [
+    { id:"for", label:"Is this for a home or a business?", type:"choice", options:["Home","Business","Estate or complex"] },
+    { id:"job", label:"What do you need?", type:"choice", options:["New alarm","Repair","Upgrade","Take over my existing alarm"] },
+    { id:"size", label:"How many rooms or areas need cover?", type:"choice", options:["1–3","4–6","7–10","More than 10"] },
+    { id:"extras", label:"Add any of these? (optional)", type:"multi", options:["Outdoor beams","Panic buttons","Armed response link","App on my phone"] },
+    { id:"brand", label:"Current alarm brand, if you have one", type:"text", placeholder:"e.g. Paradox, IDS, don't know" } ]},
+  cctv: { title: "CCTV and live monitoring", intro: "Tell us about the cameras you need.", q: [
+    { id:"for", label:"Is this for a home or a business?", type:"choice", options:["Home","Business","Estate or complex"] },
+    { id:"cams", label:"How many cameras?", type:"choice", options:["1–4","5–8","9–16","Not sure"] },
+    { id:"where", label:"Where will they go?", type:"choice", options:["Outside","Inside","Both"] },
+    { id:"extras", label:"What do you want? (optional)", type:"multi", options:["View on my phone","Off-site live monitoring","Night vision","Recording backup"] },
+    { id:"existing", label:"Do you already have cameras?", type:"choice", options:["No, new system","Yes, needs fixing","Yes, want to upgrade"] } ]},
+  fence: { title: "Electric fencing", intro: "A few details about your property boundary.", q: [
+    { id:"job", label:"What do you need?", type:"choice", options:["New fence","Repair","Upgrade","Compliance certificate (CoC)"] },
+    { id:"length", label:"Rough length of the boundary (metres)", type:"number", placeholder:"e.g. 80" },
+    { id:"wall", label:"What will it go on?", type:"choice", options:["Wall","Palisade","Freestanding","Not sure"] },
+    { id:"extras", label:"Add any of these? (optional)", type:"multi", options:["Link to alarm","Gate motor","Armed response link"] } ]},
+  guarding: { title: "Guarding", intro: "Tell us about the site and the cover you need.", q: [
+    { id:"site", label:"What type of site?", type:"choice", options:["Residential complex","Business or office park","Retail or mall","School","Construction site","Other"] },
+    { id:"guards", label:"How many guards?", type:"choice", options:["1","2","3–5","More than 5","Not sure"] },
+    { id:"shift", label:"When do you need cover?", type:"choice", options:["Day","Night","24 hours"] },
+    { id:"armed", label:"Armed or unarmed?", type:"choice", options:["Armed","Unarmed","Advise me"] },
+    { id:"start", label:"When should it start?", type:"date" } ]},
+  patrols: { title: "Street and event patrols", intro: "Patrols for your street or an event.", q: [
+    { id:"type", label:"What is it for?", type:"choice", options:["Our street (ongoing)","An event (once-off)"] },
+    { id:"street", label:"Street name or event venue", type:"text", placeholder:"e.g. Lepelaar Street" },
+    { id:"homes", label:"How many households or guests?", type:"number", placeholder:"e.g. 12" },
+    { id:"when", label:"When?", type:"choice", options:["Day","Night","Day and night"] },
+    { id:"date", label:"Start or event date", type:"date" } ]},
+  vip: { title: "VIP protection and safe home escort", intro: "Tell us who needs protecting and where.", q: [
+    { id:"type", label:"What do you need?", type:"choice", options:["Safe home escort","VIP close protection","Event protection"] },
+    { id:"people", label:"How many people?", type:"number", placeholder:"e.g. 2" },
+    { id:"route", label:"From and to (areas)", type:"text", placeholder:"e.g. OR Tambo to Florida" },
+    { id:"date", label:"Date", type:"date" },
+    { id:"freq", label:"How often?", type:"choice", options:["Once-off","Weekly","Ongoing"] } ]}
+};
+let currentQuote = null;
+function buildQuote(key){
+  if (currentQuote === key) return;
+  currentQuote = key;
+  const cfg = QUOTES[key];
+  document.getElementById("q-title").textContent = cfg.title;
+  document.getElementById("q-intro").textContent = cfg.intro;
+  document.title = cfg.title + " quote | Shaik Security Group";
+  const box = document.getElementById("q-questions");
+  box.innerHTML = "";
+  cfg.q.forEach(q => {
+    if (q.type === "choice" || q.type === "multi") {
+      const fs = document.createElement("fieldset");
+      const lg = document.createElement("legend"); lg.textContent = q.label; fs.appendChild(lg);
+      const wrap = document.createElement("div"); wrap.className = "pills"; wrap.dataset.q = q.id; wrap.dataset.multi = q.type === "multi";
+      q.options.forEach((o, i) => {
+        const b = document.createElement("button"); b.type = "button"; b.className = "pill"; b.textContent = o;
+        b.setAttribute("aria-pressed", q.type === "choice" && i === 0 ? "true" : "false");
+        b.addEventListener("click", () => {
+          if (q.type === "multi") b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true");
+          else wrap.querySelectorAll(".pill").forEach(x => x.setAttribute("aria-pressed", x === b));
+        });
+        wrap.appendChild(b);
+      });
+      fs.appendChild(wrap); box.appendChild(fs);
+    } else {
+      const lb = document.createElement("label"); lb.className = "q-field"; lb.textContent = q.label;
+      const inp = document.createElement("input"); inp.type = q.type; inp.dataset.q = q.id;
+      if (q.placeholder) inp.placeholder = q.placeholder;
+      if (q.type === "number") { inp.min = "0"; inp.inputMode = "numeric"; }
+      lb.appendChild(inp); box.appendChild(lb);
+    }
+  });
+  document.getElementById("svc-form").style.display = "";
+  document.getElementById("svc-done").classList.remove("show");
+}
+document.getElementById("svc-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const cfg = QUOTES[currentQuote], form = e.target, d = new FormData(form);
+  const lines = ["Hi Shaik Security, I'd like a quote for: " + cfg.title];
+  cfg.q.forEach(q => {
+    let val;
+    if (q.type === "choice" || q.type === "multi")
+      val = [...form.querySelectorAll('[data-q="'+q.id+'"] [aria-pressed="true"]')].map(b => b.textContent).join(", ");
+    else val = form.querySelector('[data-q="'+q.id+'"]').value;
+    if (val) lines.push("- " + q.label.replace(/\s*\(optional\)/,"") + " " + val);
+  });
+  lines.push("", "Name: " + d.get("name"), "Phone: " + d.get("phone"), "Suburb: " + d.get("suburb"), "Best time to call: " + d.get("time"));
+  if (d.get("notes")) lines.push("Notes: " + d.get("notes"));
+  const link = waLink(lines.join("\n"));
+  document.getElementById("svc-done-wa").href = link;
+  window.open(link, "_blank", "noopener");
+  form.style.display = "none"; document.getElementById("svc-done").classList.add("show");
+  form.reset(); currentQuote = null;
+});
+
 // Pages
 const pages = ["home","services","about","contact"];
 const nav = document.getElementById("nav");
 const menuBtn = document.querySelector(".menu-btn");
 function show(){
   const id = location.hash.replace("#","") || "home";
-  const page = pages.includes(id) ? id : "home";
-  pages.forEach(p => document.getElementById("page-"+p).classList.toggle("active", p === page));
-  nav.querySelectorAll("a:not(.btn)").forEach(a => { if (a.getAttribute("href") === "#"+page) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+  let page = pages.includes(id) ? id : "home";
+  if (id.startsWith("quote-") && QUOTES[id.slice(6)]) { page = "quote"; buildQuote(id.slice(6)); }
+  [...pages,"quote"].forEach(p => document.getElementById("page-"+p).classList.toggle("active", p === page));
+  const navPage = page === "quote" ? "services" : page;
+  nav.querySelectorAll("a:not(.btn)").forEach(a => { if (a.getAttribute("href") === "#"+navPage) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
   nav.classList.remove("open"); menuBtn.setAttribute("aria-expanded","false");
   window.scrollTo({top:0});
 }
@@ -386,7 +520,6 @@ function pick(group, label){
 document.querySelectorAll(".pills").forEach(g => g.addEventListener("click", e => {
   if (e.target.classList.contains("pill")) pick(g.dataset.group, e.target.textContent);
 }));
-document.querySelectorAll("[data-service]").forEach(a => a.addEventListener("click", () => pick("service", a.dataset.service)));
 const chosen = g => document.querySelector('[data-group="'+g+'"] [aria-pressed="true"]').textContent;
 
 // Quote form -> WhatsApp
