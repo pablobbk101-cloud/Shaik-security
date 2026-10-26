@@ -81,6 +81,9 @@ nav .btn{margin-left:8px;color:#fff;box-shadow:none}
 .light .eyebrow{color:var(--red-dark)}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
 .card{background:#fff;border:1px solid #E2E2DE;border-radius:10px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.card{overflow:hidden}
+.card-img{width:auto;align-self:stretch;max-width:none;margin:-22px -22px 6px;height:170px;object-fit:cover;display:block}
+.q-img{width:100%;height:190px;object-fit:cover;border-radius:10px;margin:14px 0 4px;display:block}
 .card h3{font-size:19px}
 .card p{margin:0;color:#444;flex-grow:1;font-size:15px}
 .card a{color:var(--red-dark);font-weight:700;text-decoration:none;min-height:40px;display:inline-flex;align-items:center}
@@ -233,12 +236,12 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
     <p class="eyebrow">Services</p>
     <h2>Everything to keep you protected</h2>
     <div class="cards">
-      <div class="card"><h3>Alarm systems</h3><p>New installs, repairs and upgrades, linked to our response team.</p><a href="#quote-alarm">Get a quote →</a></div>
-      <div class="card"><h3>CCTV and live monitoring</h3><p>Cameras installed and watched off-site, with alerts when it matters.</p><a href="#quote-cctv">Get a quote →</a></div>
-      <div class="card"><h3>Electric fencing</h3><p>Compliant fences installed, repaired and certified.</p><a href="#quote-fence">Get a quote →</a></div>
-      <div class="card"><h3>Guarding</h3><p>24-hour guards for complexes, malls, office parks and schools. Panic system included.</p><a href="#quote-guarding">Get a quote →</a></div>
-      <div class="card"><h3>Street and event patrols</h3><p>Neighbours share street patrols, day or night. Evening cover for events too.</p><a href="#quote-patrols">Get a quote →</a></div>
-      <div class="card"><h3>VIP and safe home escort</h3><p>Close protection and escorts to your door, on request.</p><a href="#quote-vip">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-alarm.jpg" alt="" loading="lazy"><h3>Alarm systems</h3><p>New installs, repairs and upgrades, linked to our response team.</p><a href="#quote-alarm">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-cctv.jpg" alt="" loading="lazy"><h3>CCTV and live monitoring</h3><p>Cameras installed and watched off-site, with alerts when it matters.</p><a href="#quote-cctv">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-fence.jpg" alt="" loading="lazy"><h3>Electric fencing</h3><p>Compliant fences installed, repaired and certified.</p><a href="#quote-fence">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-guarding.jpg" alt="" loading="lazy"><h3>Guarding</h3><p>24-hour guards for complexes, malls, office parks and schools. Panic system included.</p><a href="#quote-guarding">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-patrols.jpg" alt="" loading="lazy"><h3>Street and event patrols</h3><p>Neighbours share street patrols, day or night. Evening cover for events too.</p><a href="#quote-patrols">Get a quote →</a></div>
+      <div class="card"><img class="card-img" src="images/svc-vip.jpg" alt="" loading="lazy"><h3>VIP and safe home escort</h3><p>Close protection and escorts to your door, on request.</p><a href="#quote-vip">Get a quote →</a></div>
     </div>
   </div></section>
   <section><div class="wrap">
@@ -288,6 +291,7 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
       <p class="eyebrow" style="margin-top:8px">Free quote</p>
       <h2 id="q-title">Quote</h2>
       <p id="q-intro"></p>
+      <img id="q-img" class="q-img" src="" alt="">
       <p style="margin-top:18px">Rather talk? <a class="big" href="tel:+27732355322" style="display:inline;font-size:18px">073 235 5322</a></p>
     </div>
     <div class="form">
@@ -384,7 +388,7 @@ footer .brand{font-family:var(--display);font-size:22px;text-transform:uppercase
     <div><a href="tel:+27732355322">073 235 5322</a><a href="tel:+27102107210">010 210 7210</a><a href="mailto:info@shaikgroupsa.co.za">info@shaikgroupsa.co.za</a></div>
     <div><b style="color:#fff">Hours</b><div>Open 24 hours, 7 days a week</div></div>
   </div>
-  <p class="copy">© 2026 Shaik Security Group · <span style="opacity:.6">v3</span></p>
+  <p class="copy">© 2026 Shaik Security Group · <span style="opacity:.6">v4</span></p>
 </footer>
 
 <a href="#" class="wa-float js-wa" aria-label="Chat on WhatsApp" data-msg="Hi Shaik Security, I found you on your website and would like some help.">
@@ -448,6 +452,7 @@ function buildQuote(key){
   const cfg = QUOTES[key];
   document.getElementById("q-title").textContent = cfg.title;
   document.getElementById("q-intro").textContent = cfg.intro;
+  document.getElementById("q-img").src = "images/svc-" + key + ".jpg";
   document.title = cfg.title + " quote | Shaik Security Group";
   const box = document.getElementById("q-questions");
   box.innerHTML = "";
