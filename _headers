@@ -1,0 +1,9 @@
+# Always check for the newest page so phones never show an old version.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+
+# Photos rarely change; let phones keep them for a day.
+/images/*
+  Cache-Control: public, max-age=86400
